@@ -1,0 +1,32 @@
+{% extends 'insurance/insuranceindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="200" border="1" class="table table-striped">
+    <tr>
+      <th scope="col" class="text-dark" style="color: black">#</th>
+      <th scope="col" class="text-dark" style="color: black">Company Name</th>
+      <th scope="col" class="text-dark" style="color: black"><p>Company Address</p></th>
+      <th scope="col" class="text-dark" style="color: black">Phone Number</th>
+      <th scope="col" class="text-dark" style="color: black">Email</th>
+      <th scope="col" class="text-dark" style="color: black">Licence No</th>
+      <th scope="col" class="text-dark" style="color: black">Licence Image</th>
+      <th scope="col">&nbsp;</th>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>{{ loop.index }}</td>
+      <td>{{ i['Company_name'] }}</td>
+      <td>{{ i['Company_place'] }}<br/>{{ i['Company_post'] }}<br/>{{ i['Company_pin'] }}</td>
+      <td>&nbsp;{{ i['Phone_no'] }}</td>
+      <td>&nbsp;{{ i['Email'] }}</td>
+      <td>&nbsp;{{ i['Licence_no'] }}</td>
+      <td>&nbsp;{{ i['Licence_image'] }}</td>
+      <td><p><a href="#">Approve</a></p>
+      <p><a href="#">Reject</a></p></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

@@ -1,0 +1,80 @@
+{% extends 'labours/labourindex.html' %}
+{% block body %}
+<body>
+<center>
+<form action="/sendrqst1/{{ q }}" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <table>
+    <tr>
+      <th width="165" scope="row">Name</th>
+      <td width="114"><label for="textfield"></label>
+      <input type="text" name="textfield" id="textfield" value="{{ data['Labour_name'] }}" readonly class="form-control"/></td>
+    </tr>
+    <tr>
+      <th scope="row">Place</th>
+      <td><label for="textfield2"></label>
+      <input type="text" name="textfield2" id="textfield2" value="{{ data['Labour_place'] }}" class="form-control"/></td>
+    </tr>
+    <tr>
+      <th scope="row">Post</th>
+      <td><label for="textfield3"></label>
+      <input type="text" name="textfield3" id="textfield3" value="{{ data['Labour_post'] }}" class="form-control"/></td>
+    </tr>
+    <tr>
+      <th scope="row">Pin</th>
+      <td><label for="textfield4"></label>
+      <input type="text" name="textfield4" id="textfield4" value="{{ data['Labour_pin'] }}" class="form-control"/></td>
+    </tr>
+    <tr>
+      <th scope="row">Age</th>
+      <td><label for="textfield5"></label>
+      <input type="text" name="textfield5" id="textfield5" value="{{ data['Age'] }}" class="form-control"/></td>
+    </tr>
+    <tr>
+      <th scope="row">DOB</th>
+      <td><label for="textfield6"></label>
+      <input type="text" name="textfield6" id="textfield6" value="{{ data['DOB'] }}" class="form-control"/></td>
+    </tr>
+    <tr>
+      <th scope="row">Gender</th>
+      <td><label for="textfield7"></label>
+      <input type="text" name="textfield7" id="textfield7" value="{{ data['Gender'] }}" class="form-control"/></td>
+    </tr>
+    <tr>
+      <th scope="row">State</th>
+        <td><label for="textfield11"></label>
+             <input type="text" name="textfield8" id="textfield11" value="{{ data['State'] }}" class="form-control"/></td>
+         </td>
+  </tr>
+    <tr>
+      <th scope="row">District</th>
+       <td><label for="textfield11"></label>
+          <input type="text" name="textfield9" id="textfield11" value="{{ data['District'] }}" class="form-control"/></td>
+    </tr>
+    <tr>
+      <th scope="row">Phone No</th>
+      <td><label for="textfield11"></label>
+          <input type="text" name="textfield9" id="textfield11" value="{{ data['Phone_no'] }}" class="form-control"/></td>
+    </tr>
+    <tr>
+      <th scope="row">Email</th>
+      <td><label for="textfield12"></label>
+      <input type="text" name="textfield10" id="textfield12" value="{{ data['Email'] }} " class="form-control"/></td>
+    </tr>
+    <tr>
+      <th scope="row">CV</th>
+      <td><label for="fileField"></label>
+      <input type="file" name="fileField" id="fileField" class="form-control"/></td>
+    </tr>
+    <tr>
+      <th scope="row">Labour Photo</th>
+      <td><label for="fileField2"></label>
+      <input type="file" name="fileField2" id="fileField2" class="form-control"/></td>
+    </tr>
+    <tr>
+      <td colspan="2" scope="row" align="center"><input type="submit" name="button" id="button" value="Submit" class="btn btn-primary"/></td>
+    </tr>
+  </table>
+</form>
+ </center>
+</body>
+{% endblock %}

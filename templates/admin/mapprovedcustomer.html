@@ -1,0 +1,40 @@
+{% extends 'admin/adminindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="200" border="1" class="table table-striped">
+    <tr>
+      <th scope="col" class="text-dark">#</th>
+      <th scope="col" class="text-dark" style="color: black">Customer Name</th>
+      <th scope="col"  class="text-dark" style="color: black ">Customer Address</th>
+      <th scope="col"  class="text-dark" style="color: black">Age</th>
+      <th scope="col"  class="text-dark" style="color: black">DOB</th>
+      <th scope="col"  class="text-dark" style="color: black">Gender</th>
+      <th scope="col"  class="text-dark" style="color: black">Phone No</th>
+      <th scope="col"  class="text-dark" style="color: black">Email</th>
+      <th scope="col"  class="text-dark" style="color: black">ID Proof</th>
+      <th scope="col"  class="text-dark" style="color: black">ID No</th>
+      <th scope="col"  class="text-dark" style="color: black">ID Image</th>
+
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td >{{ loop.index}}</td>
+      <td>{{ i['Customer_name'] }}</td>
+      <td>{{ i['Customer_place'] }}<br/> {{ i['Customer_post'] }} <br/>{{ i['Customer_pin'] }}</td>
+      <td>{{ i['Age'] }}&nbsp;</td>
+      <td>&nbsp;{{ i['DOB'] }}</td>
+      <td>&nbsp;{{ i['Gender'] }}</td>
+        <td>&nbsp;{{ i['Phone_no'] }}</td>
+        <td>&nbsp;{{ i['Email'] }}</td>
+      <td>{{ i['Id_proof'] }}&nbsp;</td>
+      <td>{{ i['Id_no'] }}&nbsp;</td>
+      <td>&nbsp;<img src="{{ i['Id_image'] }}" height="100" width="100"/> </td>
+
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

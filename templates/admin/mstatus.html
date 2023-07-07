@@ -1,0 +1,24 @@
+{% extends 'admin/adminindex.html' %}
+{% block body %}
+
+<body><form action="" method="get"><table width="200" border="1" class="table table-striped">
+  <tr>
+    <th scope="col"  class="text-dark" style="color: black">#</th>
+      <th  scope="col"  class="text-dark" style="color: black" >Agent Name</th>
+    <th scope="col"  class="text-dark" style="color: black">Status</th>
+    <th scope="col"  class="text-dark" style="color: black">Description</th>
+    <th scope="col"  class="text-dark" style="color: black">Date</th>
+  </tr>
+    {% for i in data %}
+  <tr>
+    <td>{{ loop.index }}</td>
+      <td>{{ i['Agent_Name'] }}</td>
+    <td>{{i['Status']  }}&nbsp;</td>
+    <td>{{ i['Description'] }}&nbsp;</td>
+    <td>{{ i['Date'] }}&nbsp;</td>
+  </tr>
+    {% endfor %}
+</table>
+</form>
+</body>
+{% endblock %}

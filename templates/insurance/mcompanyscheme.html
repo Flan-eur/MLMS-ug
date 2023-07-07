@@ -1,0 +1,33 @@
+{% extends 'insurance/insuranceindex.html' %}
+{% block body %}
+
+<body>
+<center>
+<form id="form1" name="form1" method="post" action="/mpolicy1">
+  <table>
+    <tr>
+      <th scope="row">policy name</th>
+        <td><input type="text" name="textfield4" id="textfield4" class="form-control" required/></td>
+    </tr>
+      <tr>
+      <th scope="row">policy details</th>
+      <td><label for="textarea"></label>
+      <textarea name="textarea2" id="textarea2" cols="45" rows="5" class="form-control" required></textarea></td>
+    </tr>
+      <tr>
+      <th scope="row"> Amount</th>
+          <td><input type="text" name="textfield5" id="textfield5" class="form-control" required/></td>
+    </tr>
+      <tr>
+      <th scope="row"> Duration</th>
+          <td><input type="text" name="textfield6" id="textfield6" class="form-control" required/></td>
+    </tr>
+
+    <tr>
+      <td colspan="2" scope="row" align="center"><input type="submit" name="button" id="button" value="add" class="btn btn-primary" /></td>
+    </tr>
+  </table>
+</form>
+</center>
+</body>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'agent/agentindex.html' %}
+{% block body %}
+<body><form action="" method="get"><table width="200" border="1"  class="table table-striped" >
+  <tr>
+    <th scope="col"  class="text-dark" style="color: black"><h3>#</h3></th>
+    <th scope="col"  class="text-dark" style="color: black">Labour</th>
+    <th scope="col"  class="text-dark" style="color: black">Feedback</th>
+    <th scope="col"  class="text-dark" style="color: black">Feedback Date</th>
+  </tr>
+    {% for i in data %}
+  <tr>
+    <td>&nbsp;{{ loop.index }}</td>
+    <td>{{ i['Labour_name'] }}</td>
+    <td>{{ i['Feedback'] }}</td>
+    <td>{{ i['Feedback_date'] }}&nbsp;</td>
+  </tr>
+    {% endfor %}
+</table>
+</form>
+</body>
+{% endblock %}

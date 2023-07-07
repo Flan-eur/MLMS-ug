@@ -1,0 +1,18 @@
+<table width="200" border="1" class="table table-striped">
+  <tr>
+    <th scope="col" class="text-dark" style="color: black">#</th>
+    <th scope="col" class="text-dark" style="color: black">Work</th>
+      <th scope="col" class="text-dark" style="color: black">Work Days</th>
+    <th scope="col" class="text-dark" style="color: black">Place</th>
+    <th scope="col" class="text-dark" style="color: black">Date</th>
+  </tr>
+    {% for i in data %}
+  <tr>
+    <td>{{ loop.index }}</td>
+    <td>{{ i['Works'] }}</td>
+      <td>{{ i['Work_days'] }}</td>
+    <td>{{ i['Place'] }}</td>
+    <td>{{ i['Work_date'] }}</td>
+  </tr>
+    {% endfor %}
+</table>

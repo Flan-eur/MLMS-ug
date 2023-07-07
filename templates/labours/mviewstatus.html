@@ -1,0 +1,23 @@
+{% extends 'labours/labourindex.html' %}
+{% block body %}
+<body>
+  <table width="200" border="1" class="table table-striped">
+    <tr>
+      <th scope="col" class="text-dark" style="color: black">#</th>
+      <th scope="col" class="text-dark" style="color: black">Agent Name</th>
+      <th scope="col" class="text-dark" style="color: black">Status</th>
+        <th scope="col" class="text-dark" style="color: black">Date</th>
+
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>{{ loop.index }}</td>
+      <td>{{ i['Agent_Name'] }}&nbsp;</td>
+      <td>{{ i['Status'] }}</td>
+      <td>&nbsp;{{ i['Jobrqst_date'] }}</td>
+
+    </tr>
+      {% endfor %}
+  </table>
+</body>
+{% endblock %}

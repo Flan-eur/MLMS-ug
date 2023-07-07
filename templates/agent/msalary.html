@@ -1,0 +1,66 @@
+{% extends 'agent/agentindex.html' %}
+{% block body %}
+<script type="text/javascript">
+                  var xmlHttp;
+            function show(){
+                var crs=document.getElementById("select").value;
+
+                if (typeof XMLHttpRequest != "undefined"){
+                xmlHttp= new XMLHttpRequest();
+                }
+                else if (window.ActiveXObject){
+                    xmlHttp= new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                if (xmlHttp==null){
+                    alert("Browser does not support XMLHTTP Request")
+                    return;
+                }
+
+
+               var url ="/labsalary_ajax/"+crs;
+{#                alert(url)#}
+                xmlHttp.onreadystatechange = stateChange;
+                xmlHttp.open("GET", url, true);
+
+                xmlHttp.send(null);
+            }
+
+            function stateChange(){
+                if(xmlHttp.readyState==4 || xmlHttp.readyState=="complete"){
+                    document.getElementById("works").innerHTML=xmlHttp.responseText
+                }
+	}
+</script>
+<body><center><form action="/salarym" method="post"><table>
+  <tr>
+    <th scope="row">Labours</th>
+    <td><label for="select"></label>
+      <select name="select" id="select" onchange="show()">
+      <option>select</option>
+          {% for i in data %}
+            <option value="{{i['Login_Id'] }}">{{ i['Labour_name'] }}</option>
+            {% endfor %}
+      </select></td>
+  </tr>
+</table>
+<div id="works">
+
+</div>
+<table>
+  <tr>
+    <th scope="row">Amount</th>
+    <td><label for="textfield"></label>
+      <input type="text" name="textfield" id="textfield" class="form-control"/></td>
+  </tr>
+  <tr>
+    <th scope="row">Date</th>
+    <td><input type="text" name="textfield2" id="textfield2" class="form-control"/></td>
+  </tr>
+  <tr>
+    <td colspan="2" scope="row" align="center"><input type="submit" name="button" id="button" value="add" class="btn btn-primary"/></td>
+    </tr>
+</table>
+</form>
+</center>
+</body>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'agent/agentindex.html' %}
+{% block body %}
+
+<body><center><form action="/vsp1" method="post">
+    <table>
+        <tr>
+            <td class="text-dark">Insurance company</td>
+            <td><select name="s">
+            <option>--Select--</option>
+                {% for i in dat %}
+
+                <option value="{{ i['Login_Id'] }}">{{ i['Company_name'] }}</option>
+                {% endfor %}
+            </select></td>
+            <td><input type="submit" name="t" value="view schemes" class="btn btn-primary"/></td>
+        </tr>
+    </table>
+<p></p>
+{% if data %}
+    <table width="200" border="1" class="table table-striped">
+  <tr>
+    <th scope="col" class="text-dark">#</th>
+    <th scope="col" class="text-dark">Policy Name</th>
+    <th scope="col" class="text-dark">Amount</th>
+    <th scope="col" class="text-dark">Duration</th>
+    <th></th>
+    </tr>
+        {% for i in data %}
+  <tr>
+    <td>{{ loop.index }}&nbsp;</td>
+    <td>{{ i['policy_name'] }}&nbsp;</td>
+    <td>{{ i['amount'] }}&nbsp;</td>
+    <td>{{ i['duration'] }}&nbsp;</td>
+    <td><a href="/agent_sendpolicyrequest/{{ i['policyid'] }}">Request</a></td>
+    </tr>
+    {% endfor %}
+</table>
+{% endif %}
+</form>
+</center>
+</body>
+{% endblock %}

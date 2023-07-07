@@ -1,0 +1,46 @@
+{% extends 'admin/adminindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="1134" border="1" class="table table-striped">
+    <tr>
+      <th width="16" scope="col" class="text-dark" style="color: black">#</th>
+      <th width="69" scope="col" class="text-dark" style="color: black">Agent Name</th>
+      <th width="94" scope="col" class="text-dark" style="color: black">Agent Address</th>
+      <th width="27" scope="col" class="text-dark" style="color: black">Age</th>
+      <th width="35" scope="col" class="text-dark" style="color: black">DOB</th>
+      <th width="50" scope="col" class="text-dark" style="color: black">Gender</th>
+        <th width="50" scope="col" class="text-dark" style="color: black">District</th>
+      <th width="103" scope="col" class="text-dark" style="color: black">Phone Number</th>
+      <th width="38" scope="col" class="text-dark" style="color: black">Email</th>
+      <th width="112" scope="col" class="text-dark" style="color: black">AgentLicence No</th>
+      <th width="42" scope="col" class="text-dark" style="color: black">LicenceImage</th>
+      <th width="115" scope="col" class="text-dark" style="color: black">Government ID</th>
+      <th width="115" scope="col" class="text-dark" style="color: black">ID No</th>
+      <th width="115" scope="col" class="text-dark" style="color: black">ID image</th>
+
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>&nbsp;{{ loop.index }}</td>
+      <td>&nbsp;{{ i['Agent_Name'] }}</td>
+      <td>{{ i['Agent_Place'] }}&nbsp;<br/>{{ i['Agent_Post'] }}<br/> {{ i['Agent_Pin'] }}</td>
+      <td>&nbsp;{{ i['Age'] }}</td>
+      <td>{{ i['DOB'] }}&nbsp;</td>
+      <td>{{ i['Gender'] }}&nbsp;</td>
+      <td>{{ i['District'] }}&nbsp;</td>
+      <td>&nbsp;{{ i['Phone_no'] }}</td>
+      <td>{{ i['Email'] }}&nbsp;</td>
+      <td>{{ i['Agent_Licence no'] }}&nbsp;</td>
+      <td><img src="{{ i['Licence_Image'] }}" height="100" width="100"/> </td>
+        <td>&nbsp;{{ i['Government_Id'] }}</td>
+        <td>&nbsp;{{ i['Id_no'] }}</td>
+        <td>&nbsp;<img src="{{ i['Id_Image'] }}" height="100" width="100"/> </td>
+
+    </tr>
+      {% endfor  %}
+  </table>
+</form>
+</body>
+{% endblock %}

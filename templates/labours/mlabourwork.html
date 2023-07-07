@@ -1,0 +1,25 @@
+{% extends 'labours/labourindex.html' %}
+{% block body %}
+
+<body><form action="" method="get"><table width="200" border="1"  class="table table-striped">
+  <tr>
+    <th scope="col" class="text-dark" style="color: black">#</th>
+    <th scope="col" class="text-dark" style="color: black">Works</th>
+    <th scope="col" class="text-dark" style="color: black">Place</th>
+    <th scope="col" class="text-dark" style="color: black">Work Date</th>
+    <th scope="col" class="text-dark" style="color: black">Work Time</th>
+  </tr>
+    {% for i in data %}
+  <tr>
+    <td>{{ loop.index }}&nbsp;</td>
+    <td>{{ i['Works'] }}&nbsp;</td>
+    <td>{{ i['Place'] }}</td>
+    <td>&nbsp;{{ i['Work_date'] }}</td>
+    <td>{{ i['Work_time'] }}&nbsp;</td>
+    <td><a href="https://www.google.co.in/maps/@{{ i['Latitude'] }},{{ i['Longitude'] }}">View Google Map</a></td>
+  </tr>
+    {% endfor %}
+</table>
+</form>
+</body>
+{% endblock %}

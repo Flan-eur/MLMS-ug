@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>RegistrationForm_v1 by Colorlib</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<!-- MATERIAL DESIGN ICONIC FONT -->
+		<link rel="stylesheet" href="/static/reg/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="/static/reg/css/style.css">
+	</head>
+
+	<body>
+
+		<div class="wrapper" style="">
+			<div class="inner">
+				<div class="image-holder">
+					<img src="/static/index/img/3.jpg" height="1000">
+				</div>
+				<form action="/agentreg" method="post" enctype="multipart/form-data">
+					<h3>Registration Form</h3>
+					<div class="form-wrapper">
+						<input class="form-control" type="text" name="textfield" required placeholder="Name">
+{#						<input type="text" placeholder="Last Name" class="form-control">#}
+					</div>
+					<div class="form-wrapper">
+						<input class="form-control" type="text" name="textfield2" required placeholder="Place">
+{#						<i class="zmdi zmdi-account"></i>#}
+					</div>
+
+<div class="form-wrapper">
+						 <input class="form-control" type="text" name="textfield3" required placeholder="Post">
+{#						<i class="zmdi zmdi-account"></i>#}
+					</div>	
+<div class="form-wrapper">
+					 <input class="form-control" type="text" name="textfield4" required pattern="[0-9]{6}" placeholder="Pin">
+{#						<i class="zmdi zmdi-account"></i>#}
+					</div>
+<div class="form-wrapper">
+					  <input class="form-control" type="number" name="textfield5" required placeholder="Age">
+{#						<i class="zmdi zmdi-account"></i>#}
+					</div>
+<div class="form-wrapper">
+						 <input class="form-control" type="date" name="textfield6" required placeholder="DOB">
+{#						<i class="zmdi zmdi-account"></i>#}
+					</div>
+<div class="form-wrapper">
+						 <label class="form-control">Gender
+{#                            <div class="p-t-15">#}
+                                Male
+                                    <input type="radio" checked="checked" name="radio" value="male">
+                                    <span class="checkmark"></span>
+                                Female
+                                    <input type="radio" name="radio" value="female">
+                                    <span class="checkmark"></span>
+
+{#                            </div>#}
+                    </label>
+{#<div class="form-wrapper">#}
+{#						<input type="text" placeholder="Username" class="form-control">#}
+{#						<i class="zmdi zmdi-account"></i>#}
+{#					</div>#}
+{#				<div class="form-wrapper">#}
+{#						<input type="text" placeholder="Email Address" class="form-control">#}
+{#						<i class="zmdi zmdi-email"></i>#}
+{#					</div>#}
+					<div class="form-wrapper">
+						<select name="select" id="" class="form-control">
+							<option value="" disabled selected>District</option>
+							<option disabled="disabled" selected="selected">District</option>
+                                            <option>Kasargod</option>
+                                            <option>Kannur</option>
+                                            <option>Kozhikode</option>
+                                            <option>Wayanad</option>
+                                            <option>Malappuram</option>
+                                            <option>Thrissur</option>
+                                            <option>Palakkad</option>
+                                            <option>Ernakulam</option>
+                                            <option>Idukki</option>
+                                            <option>Kottayam</option>
+                                            <option>Alappuzha</option>
+                                            <option>Pathanamthitta</option>
+                                            <option>Kollam</option>
+                                            <option>Thiruvananthapuram</option>
+						</select>
+						<i class="zmdi zmdi-caret-down" style="font-size: 17px"></i>
+					</div>
+					<div class="form-wrapper">
+						   <input class="form-control" type="tel" name="textfield7" required pattern="[6-9][0-9]{9}" placeholder="Phone No">
+{#						<i class="zmdi zmdi-lock"></i>#}
+					</div>
+					<div class="form-wrapper">
+						   <input class="form-control" type="email" name="textfield8" required placeholder="Mail ID">
+{#						<i class="zmdi zmdi-lock"></i>#}
+					</div>
+    <div class="form-wrapper">
+						   <input class="form-control" type="text" name="textfield9" required placeholder="Agent_License No">
+{#						<i class="zmdi zmdi-lock"></i>#}
+					</div>
+    <div class="form-wrapper">
+						  <input class="form-control" type="file" name="fileField" required placeholder="License Image">
+{#						<i class="zmdi zmdi-lock"></i>#}
+					</div>
+    <div class="form-wrapper">
+						    <input class="form-control" type="text" name="textfield10" required placeholder="Government ID">
+{#						<i class="zmdi zmdi-lock"></i>#}
+					</div>
+    <div class="form-wrapper">
+						 <input class="form-control" type="text" name="textfield11" required placeholder="ID No">
+{#						<i class="zmdi zmdi-lock"></i>#}
+					</div>
+    <div class="form-wrapper">
+                <input class="form-control" type="file" name="fileField2" required placeholder="ID Image">
+
+{#						<i class="zmdi zmdi-lock"></i>#}
+					</div>
+    <div class="form-wrapper">
+						 <input class="form-control" type="password" name="textfield12" required placeholder="Password">
+{#						<i class="zmdi zmdi-lock"></i>#}
+					</div>
+    <div class="form-wrapper">
+						 <input class="form-control" type="password" name="password" required placeholder="Confirm Password">
+{#						<i class="zmdi zmdi-lock"></i>#}
+					</div>
+     <div class="form-wrapper">
+						  <input class="form-control" type="text" name="ac" required placeholder="Account No">
+{#						<i class="zmdi zmdi-lock"></i>#}
+					</div>
+     <div class="form-wrapper">
+					  <input class="form-control" type="text" name="ifsc" required placeholder="IFSC">
+{#						<i class="zmdi zmdi-lock"></i>#}
+					</div>
+					<button>Register
+						<i class="zmdi zmdi-arrow-right"></i>
+					</button>
+</div></form>
+			</div>
+		</div>
+		
+	</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

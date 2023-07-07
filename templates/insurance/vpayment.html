@@ -1,0 +1,30 @@
+{% extends 'insurance/insuranceindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="1134" border="1" class="table table-striped">
+    <tr>
+      <th width="16" scope="col"  class="text-dark" style="color: black">#</th>
+      <th width="69" scope="col"  class="text-dark" style="color: black">Agent Name</th>
+      <th width="94" scope="col"  class="text-dark" style="color: black">Amount</th>
+      <th width="27" scope="col"  class="text-dark" style="color: black">Date</th>
+        <th width="27" scope="col"  class="text-dark" style="color: black">Renewal Date</th>
+
+
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>&nbsp;{{ loop.index }}</td>
+      <td>&nbsp;{{ i['Agent_Name'] }}</td>
+      <td>{{ i['amt'] }}</td>
+      <td>{{ i['date'] }}</td>
+    <td>&nbsp;{{ i['tDateDiff'] }}</td>
+
+
+    </tr>
+      {% endfor  %}
+  </table>
+</form>
+</body>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'insurance/insuranceindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="200" border="1" class="table table-striped">
+    <tr>
+      <th scope="col"  class="text-dark" style="color: black" >#</th>
+      <th scope="col"  class="text-dark" style="color: black">Agent Name</th>
+      <th scope="col"  class="text-dark" style="color: black">Agent Phone no</th>
+      <th scope="col"  class="text-dark" style="color: black">Labour Name</th>
+      <th scope="col"  class="text-dark" style="color: black">Labour phn no</th>
+      <th scope="col"  class="text-dark" style="color: black">Policy</th>
+      <th scope="col"  class="text-dark" style="color: black">Amount</th>
+      <th scope="col"  class="text-dark" style="color: black">Duration</th>
+        <th></th>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>&nbsp;{{ loop.index }}</td>
+      <td>{{ i['Agent_Name'] }}</td>
+      <td>{{ i ['Phone_no'] }}</td>
+      <td>&nbsp;{{ i ['Labour_name'] }}</td>
+      <td>&nbsp;{{ i ['Phone_no'] }}</td>
+      <td>{{ i ['policy_name']}}</td>
+      <td>&nbsp;{{ i['amount'] }}</td>
+      <td>&nbsp;{{ i['duration'] }}</td>
+      <td><p><a href="/papprove/{{ i['p_req_id'] }}">Approve</a></p>
+      <p><a href="/preject/{{ i['p_req_id'] }}">Reject</a></p></td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

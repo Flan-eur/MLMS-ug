@@ -1,0 +1,24 @@
+{% extends 'agent/agentindex.html' %}
+{% block body %}
+<body>
+<center>
+<form id="form1" name="form1" method="post" action="/addsts">
+  <table>
+    <tr>
+      <th scope="row">Status</th>
+      <td><label for="textfield"></label>
+      <input type="text" name="textfield" id="textfield"  class="form-control" required/></td>
+    </tr>
+    <tr>
+      <th scope="row">Description</th>
+      <td><label for="textarea"></label>
+      <textarea name="textarea" id="textarea" cols="45" rows="5" class="form-control" required></textarea></td>
+    </tr>
+    <tr>
+      <td colspan="2" scope="row" align="center"><input type="submit" name="button" id="button" value="Add" class="btn btn-primary"/></td>
+    </tr>
+  </table>
+</form>
+</center>
+</body>
+{% endblock %}

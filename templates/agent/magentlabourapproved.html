@@ -1,0 +1,42 @@
+{% extends 'agent/agentindex.html' %}
+{% block body %}
+
+<body><form action="" method="get"><table width="200" border="1" class="table table-striped">
+  <tr>
+    <th scope="col"  class="text-dark" style="color: black">#</th>
+    <th scope="col"  class="text-dark" style="color: black">Labour Name</th>
+    <th scope="col"  class="text-dark" style="color: black">Labour Address</th>
+    <th scope="col"  class="text-dark" style="color: black">Age</th>
+    <th scope="col"  class="text-dark" style="color: black">DOB</th>
+    <th scope="col"  class="text-dark" style="color: black">Gender</th>
+    <th scope="col"  class="text-dark" style="color: black">Phone No</th>
+    <th scope="col"  class="text-dark" style="color: black">Email</th>
+    <th scope="col"  class="text-dark" style="color: black">Government ID</th>
+    <th scope="col"  class="text-dark" style="color: black">ID No</th>
+    <th scope="col"  class="text-dark" style="color: black">ID Image</th>
+       <th scope="col"  class="text-dark" style="color: black">CV</th>
+    <th scope="col"  class="text-dark" style="color: black">Labour Photo</th>
+
+  </tr>
+    {% for i in data %}
+  <tr>
+    <td>{{ loop.index }}</td>
+    <td>{{ i['Labour_name'] }}</td>
+    <td>&nbsp;{{ i['Labour_place'] }} <br/>{{ i['Labour_post'] }}<br/> {{ i['Labour_pin'] }}<br/> {{ i['State'] }} <br/>{{ i['District'] }}</td>
+    <td>{{ i['Age'] }}</td>
+    <td>{{ i['DOB'] }}&nbsp;</td>
+    <td>&nbsp;{{ i['Gender'] }}</td>
+    <td>&nbsp;{{ i['Phone_no'] }}</td>
+    <td>&nbsp;{{ i['Email'] }}</td>
+    <td>&nbsp;{{ i['Government_Id'] }}</td>
+    <td>&nbsp;{{ i['Id_no'] }}</td>
+    <td>&nbsp;<img src="{{ i['Id_image'] }}" height="100" width="100"/> </td>
+   <td>&nbsp;<img src="{{ i['cv'] }}" height="100" width="100"/> </td>
+   <td>&nbsp;<img src="{{ i['Labour_Photo'] }}" height="100" width="100"/> </td>
+
+  </tr>
+    {% endfor %}
+</table>
+</form>
+</body>
+{% endblock %}

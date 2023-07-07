@@ -1,0 +1,35 @@
+{% extends 'customer/customerindex.html' %}
+{% block body %}
+<body>
+<center>
+<form id="form1" name="form1" method="post" action="/clarqst1/{{ aid }}">
+  <table>
+
+    <tr>
+      <th scope="row">Work Details</th>
+      <td><label for="textarea"></label>
+      <textarea name="textarea" id="textarea" cols="45" rows="5" class="form-control" required></textarea></td>
+    </tr>
+    <tr>
+      <th scope="row">Needed Labours</th>
+      <td><label for="textfield8"></label>
+      <input type="text" name="textfield7" id="textfield8" class="form-control" required/></td>
+    </tr>
+      <tr>
+      <th scope="row">Work Days</th>
+      <td><label for="textfield9"></label>
+      <input type="text" name="textfield8" id="textfield9" class="form-control" required/></td>
+    </tr>
+      <tr>
+      <th scope="row">Payment per head</th>
+      <td><label for="textfield10"></label>
+      <input type="text" name="textfield9" id="textfield10" class="form-control" required/></td>
+    </tr>
+      <tr>
+      <td colspan="2" scope="row" align="center"><input type="submit" name="button" id="button" value="Request" class="btn btn-primary"/></th>
+    </tr>
+  </table>
+</form>
+</center>
+</body>
+{% endblock %}

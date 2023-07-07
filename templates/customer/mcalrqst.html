@@ -1,0 +1,51 @@
+{% extends 'customer/customerindex.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="/search_agents">
+  <table width="200">
+      <tr><td><select name="k">
+          <option>--Select--</option>
+          <option>Kasargod</option>
+          <option>Kannur</option>
+          <option>Kozhikode</option>
+          <option>wayanad</option>
+          <option>malappuram</option>
+          <option>alappuzha</option>
+          <option>palakkad</option>
+          <option>idukki</option>
+          <option>trissur</option>
+          <option>kottayam</option>
+          <option>eranakulam</option>
+          <option>kollam</option>
+          <option>pathanamthitta</option>
+          <option>trivandrum</option>
+      </select> </td>
+          <td><input type="submit" name="n" value="Search" class="btn btn-primary"/></td></tr>
+  </table>
+    <p></p>
+    {% if data %}
+  <table width="200" border="1" class="table table-striped">
+    <tr>
+      <th scope="col" class="text-dark" style="color: black">#</th>
+      <th scope="col" class="text-dark" style="color: black">Agent Name</th>
+      <th scope="col" class="text-dark" style="color: black">Agent Address</th>
+        <th scope="col" class="text-dark" style="color: black">Phone no</th>
+        <th scope="col" class="text-dark" style="color: black">Email</th>
+
+      <th scope="col">&nbsp;</th>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>{{ loop.index }}</td>
+      <td>&nbsp;{{ i['Agent_Name'] }}</td>
+      <td>{{ i['Agent_Place'] }}<br>{{ i['Agent_Post'] }}<br>{{ i['Agent_Pin'] }}</td>
+        <td>{{ i['Phone_no'] }}</td>
+        <td>{{ i['Email'] }}</td>
+      <td><a href="/clarqst2/{{ i['Login_id'] }}">Request</a></td>
+    </tr>
+  {% endfor %}
+  </table>
+    {% endif %}
+</form>
+</body>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'agent/agentindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="681" border="1" class="table table-striped">
+    <tr>
+      <th scope="col" class="text-dark" style="color: black" >#</th>
+      <th scope="col" class="text-dark" style="color: black">Labour Name</th>
+      <th scope="col" class="text-dark" style="color: black">Labour Address</th>
+      <th scope="col" class="text-dark" style="color: black">Age</th>
+      <th scope="col" class="text-dark" style="color: black">DOB</th>
+      <th scope="col" class="text-dark" style="color: black">Gender</th>
+      <th scope="col" class="text-dark" style="color: black">Phone No</th>
+      <th scope="col" class="text-dark" style="color: black">Email</th>
+      <th scope="col" class="text-dark" style="color: black">Government ID</th>
+      <th scope="col" class="text-dark" style="color: black">ID No</th>
+      <th scope="col" class="text-dark" style="color: black">ID Image</th>
+      <th scope="col" class="text-dark" style="color: black">CV</th>
+      <th scope="col" class="text-dark" style="color: black">Labour Photo</th>
+      <th scope="col">&nbsp;</th>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>{{ loop.index }}</td>
+      <td>{{ i['Labour_name'] }}</td>
+      <td>{{ i['Labour_place']}}<br/> {{ i['Labour_post'] }}<br/> {{ i['Labour_pin'] }} <br/>{{ i['District'] }}<br/> {{ i['State'] }}</td>
+      <td>{{ i['Age'] }}&nbsp;</td>
+      <td>{{ i['DOB'] }}&nbsp;</td>
+      <td>{{ i['Gender'] }}&nbsp;</td>
+      <td>{{ i['Phone_no'] }}&nbsp;</td>
+      <td>{{ i['Email'] }}&nbsp;</td>
+      <td>{{ i['Government_Id'] }}</td>
+      <td>{{ i['Id_no'] }}&nbsp;</td>
+      <td><img src="{{ i['Id_image'] }}" alt="" height="100" width="100"/></td>
+        <td><img src="{{ i['cv'] }}" alt="" height="100" width="100"/></td>
+      <td><img src="{{ i['Labour_Photo'] }}" alt="" height="100" width="100"/></td>
+        <p><td><a href="/labapprove/{{ i['Labour_Id']}}">Approve</a></p>
+      <p><a href="/labreject/{{ i['Labour_Id']}}">Reject</a></p></td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

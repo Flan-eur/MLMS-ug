@@ -1,0 +1,50 @@
+{% extends 'labours/labourindex.html' %}
+{% block body %}
+
+<body><form action="/vsend" method="post">
+    <table>
+        <tr>
+            <td>District</td>
+            <td><select name="s">
+                <option>--Select--</option>
+                <option>Kasargod</option>
+                 <option>Kannur</option>
+                 <option>Kozhikode</option>
+                 <option>Wayanad</option>
+                 <option>Malappuram</option>
+                 <option>Palakkad</option>
+                 <option>Trissur</option>
+                 <option>Ernakulam</option>
+                <option>Idukki</option>
+                <option>Kottayam</option>
+                <option>Alappuzha</option>
+                <option>Pathanamthitta</option>
+                <option>Kollam</option>
+                <option>Thiruvanathpuram</option>
+            </select></td>
+            <td><input type="submit" name="t" value="view agent" class="btn btn-primary"/></td>
+        </tr>
+    </table>
+</form>
+  <table width="200" border="1" class="table table-striped">
+    <tr>
+      <th scope="col"  class="text-dark" style="color: black">#</th>
+      <th scope="col"  class="text-dark" style="color: black">Agent Name</th>
+      <th scope="col"  class="text-dark" style="color: black">Status</th>
+      <th scope="col"  class="text-dark" style="color: black">Description</th>
+      <th scope="col"  class="text-dark" style="color: black">Date</th>
+      <th scope="col">&nbsp;</th>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>{{ loop.index }}</td>
+      <td>{{ i['Agent_Name'] }}&nbsp;</td>
+      <td>{{ i['Status'] }}</td>
+      <td>{{ i['Description'] }}&nbsp;</td>
+      <td>&nbsp;{{ i['Date'] }}</td>
+      <td><a href="/sendrqst/{{ i['Login_id'] }}">Request</a></td>
+    </tr>
+      {% endfor %}
+  </table>
+</body>
+{% endblock %}

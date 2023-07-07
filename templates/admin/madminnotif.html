@@ -1,0 +1,17 @@
+{% extends 'admin/adminindex.html' %}
+{% block body %}
+
+<body><center><form action="/mnoti1" method="post"><table>
+  <tr>
+    <th scope="row">Notification</th>
+    <td><label for="textarea"></label>
+      <textarea name="textarea" id="textarea" cols="45" rows="5" class="form-control"></textarea></td>
+  </tr>
+  <tr>
+    <td colspan="2" scope="row" align="center"><input type="submit" name="button" id="button" value="send" class="btn btn-primary"/></td>
+    </tr>
+</table>
+</form>
+</center>
+</body>
+{% endblock %}

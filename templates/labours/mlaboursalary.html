@@ -1,0 +1,21 @@
+{% extends 'labours/labourindex.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="200" border="1"  class="table table-striped">
+    <tr>
+      <th scope="col"  class="text-dark" style="color: black">#</th>
+      <th scope="col"  class="text-dark" style="color: black">Salary Amount</th>
+      <th scope="col"  class="text-dark" style="color: black">Salary Date</th>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>{{loop.index}}</td>
+      <td>{{ i['Salary_Amount'] }}&nbsp;</td>
+      <td>&nbsp;{{ i['Salary_Date'] }}&nbsp;</td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

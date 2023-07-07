@@ -1,0 +1,39 @@
+{% extends 'agent/agentindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="200" border="1" class="table table-striped">
+    <tr>
+      <th height="47" scope="col" class="text-dark" style="color: black">#</th>
+      <th scope="col" class="text-dark" style="color: black">Customer Name</th>
+      <th scope="col" class="text-dark" style="color: black">Customer Address</th>
+      <th scope="col" class="text-dark" style="color: black">Phone No</th>
+{#      <th scope="col" class="text-dark" style="color: black">Email</th>#}
+      <th scope="col" class="text-dark" style="color: black">Work Details</th>
+        <th scope="col" class="text-dark" style="color: black">Work Days</th>
+      <th scope="col" class="text-dark" style="color: black">Labours No</th>
+      <th scope="col" class="text-dark" style="color: black">Status</th>
+      <th scope="col" class="text-dark" style="color: black">Request Date</th>
+      <th scope="col">&nbsp;</th>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>{{ loop.index }}</td>
+      <td>{{ i['Customer_name'] }}&nbsp;</td>
+      <td>{{ i['Customer_place'] }}<br/> {{ i['Customer_post'] }} <br/>{{ i['Customer_pin'] }}</td>
+      <td>{{ i['Phone_no'] }}</td>
+{#      <td>{{ i['Emai'] }}&nbsp;</td>#}
+        <td>{{ i['Work_Details'] }}&nbsp;</td>
+        <td>{{ i['work_days'] }}&nbsp;</td>
+      <td>&nbsp;{{ i['Needed_labours'] }}</td>
+      <td>&nbsp;{{ i['Status'] }}</td>
+      <td>&nbsp;{{ i['Request_Date'] }}</td>
+      <td><p><a href="/custapprove/{{ i['Request_Id'] }}">Approve</a></p>
+      <p><a href="/custreject/{{ i['Request_Id'] }}">Reject</a></p></td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

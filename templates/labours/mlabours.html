@@ -1,0 +1,163 @@
+{% extends 'labours/labourindex.html' %}
+{% block body %}
+<body>
+<form action="/labourreg" method="post" enctype="multipart/form-data"><table width="366" border="1">
+  <tr>
+    <th width="144" scope="row">Name</th>
+    <td width="206"><label for="textfield"></label>
+      <input type="text" name="textfield" id="textfield" required /></td>
+  </tr>
+  <tr>
+    <th scope="row">Place</th>
+    <td><input type="text" name="textfield2" id="textfield2" required/></td>
+  </tr>
+  <tr>
+    <th scope="row">Post</th>
+    <td><input type="text" name="textfield3" id="textfield3" required/></td>
+  </tr>
+  <tr>
+    <th scope="row">Pin</th>
+    <td><input type="text" name="textfield4" id="textfield4" required pattern="[0-9]{6}"/></td>
+  </tr>
+  <tr>
+    <th scope="row">Age</th>
+    <td><input type="text" name="textfield5" id="textfield5" required/></td>
+  </tr>
+  <tr>
+    <th scope="row">Date Of Birth</th>
+    <td><input type="text" name="textfield6" id="textfield6" required/></td>
+  </tr>
+  <tr>
+    <th scope="row">Gender</th>
+    <td><p>
+      <label for="radio"></label>
+      <input type="radio" name="radio" id="radio" value="radio" />
+      Male</p>
+      <p>
+        <input type="radio" name="radio" id="radio2" value="radio2" />
+        <label for="radio2"></label>
+      Female</p></td>
+  </tr>
+  <tr>
+    <th scope="row">State</th>
+    <td><label for="select"></label>
+      <select name="select" id="select">
+          <option>Jammu&Kashmir</option>
+          <option>Himachal Pradesh</option>
+          <option>Punjab</option>
+          <option>Hariyana</option>
+          <option>Uttarakhand</option>
+          <option>Rajasthan</option>
+          <option>Uttar Pradesh</option>
+          <option>Bihar</option>
+          <option>Sikkim</option>
+          <option>Arunachal Pradesh</option>
+          <option>Assam</option>
+          <option>Nagaland</option>
+          <option>Meghalaya</option>
+          <option>Manippur</option>
+          <option>Tripura</option>
+          <option>Mizoram</option>
+          <option>Gujarat</option>
+          <option>Madhya Pradesh</option>
+          <option>Jharkhand</option>
+          <option>West Bangal</option>
+          <option>Chhattisgand</option>
+          <option>Orissa</option>
+          <option>Maharashtra</option>
+          <option>Goa</option>
+          <option>Telegana</option>
+          <option>Karnataka</option>
+          <option>Andhra Pradesh</option>
+          <option>Tamil Nadu</option>
+
+      </select></td>
+  </tr>
+  <tr>
+    <th scope="row">District</th>
+    <td><label for="select2"></label>
+      <select name="select2" id="select2">
+          <option>Ladakh</option>
+          <option>Srinagar</option>
+          <option>Shimla</option>
+           <option>Chandigarh</option>
+          <option>Dehradun</option>
+          <option>Delhi</option>
+           <option>Lucknow</option>
+          <option>Jaipur</option>
+          <option>Patna</option>
+           <option>Shillong</option>
+          <option>Agartala</option>
+          <option>Dispur</option>
+          <option>Kohima</option>
+          <option>Itanagar</option>
+          <option>Imphal</option>
+          <option>Aizawl</option>
+          <option>Kolkata</option>
+          <option>Bhubaneswar</option>
+          <option>Raipur</option>
+          <option>Bhopal</option>
+          <option>Gandhinagar</option>
+          <option>Silvassa</option>
+          <option>Mumbai</option>
+          <option>Hyderabad</option>
+          <option>Panaji</option>
+          <option>Amaravati</option>
+          <option>Chennai</option>
+          <option>Bengaluru</option>
+          <option>Uduppi</option>
+          <option>Kolapur</option>
+          <option>Porbandhar</option>
+
+
+
+
+
+      </select></td>
+  </tr>
+  <tr>
+    <th scope="row">Phone_No</th>
+    <td><input type="tel" name="textfield7" id="textfield7" required pattern="[6-9][0-9]{9}"/></td>
+  </tr>
+  <tr>
+    <th scope="row">Mail_Id</th>
+    <td><input type="email" name="textfield8" id="textfield8" required/></td>
+  </tr>
+  <tr>
+    <th scope="row">Government Id</th>
+    <td><label for="select3"></label>
+      <select name="select3" id="select3">
+          <option>Aadhaar Card</option>
+           <option>PAN Card</option>
+           <option>Voter ID</option>
+           <option>Passport</option>
+
+      </select></td>
+  </tr>
+  <tr>
+    <th scope="row">ID No</th>
+    <td><label for="textfield9"></label>
+      <input type="text" name="textfield9" id="textfield9" required/></td>
+  </tr>
+  <tr>
+    <th scope="row">ID Image</th>
+    <td><label for="fileField"></label>
+      <input type="file" name="fileField" id="fileField" required/></td>
+  </tr>
+    <tr>
+    <th scope="row">password</th>
+    <td><label for="textfield12"></label>
+      <input type="password" name="textfield12" id="textfield12" required/></td>
+  </tr>
+    <tr>
+    <th scope="row">confirm password</th>
+    <td><label for="textfield13"></label>
+      <input type="password" name="password" id="textfield13" required/></td>
+  </tr>
+  <tr>
+    <th colspan="2" scope="row"><input type="submit" name="button" id="button" value="Submit" /></th>
+    </tr>
+</table>
+</form>
+</body>
+{% endblock %}

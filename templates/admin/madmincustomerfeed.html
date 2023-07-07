@@ -1,0 +1,23 @@
+{% extends 'admin/adminindex.html' %}
+{% block body %}
+
+<body><center><form action="" method="get"><table width="200" border="1" class="table table-responsive">
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Customer</th>
+    <th scope="col">Feedback</th>
+    <th scope="col">Feedback Date</th>
+  </tr>
+   {% for i in data %}
+  <tr>
+    <td>&nbsp;{{ loop.index }}</td>
+    <td>{{ i['Customer_name'] }}</td>
+    <td>{{ i['Feedback'] }}</td>
+    <td>{{ i['feedback_date'] }}&nbsp;</td>
+  </tr>
+    {% endfor %}
+</table>
+</form>
+</center>
+</body>
+{% endblock %}

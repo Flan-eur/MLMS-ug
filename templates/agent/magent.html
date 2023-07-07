@@ -1,0 +1,127 @@
+{% extends 'agent/agentindex.html' %}
+{% block body %}
+<body>
+<form action="/agentreg" method="post" enctype="multipart/form-data"><table width="378" border="1">
+  <tr>
+    <th width="163" scope="row">Name</th>
+    <td width="199"><label for="textfield"></label>
+      <input type="text" name="textfield" id="textfield" required/></td>
+  </tr>
+  <tr>
+    <th scope="row">Place</th>
+    <td><label for="textfield2"></label>
+      <input type="text" name="textfield2" id="textfield2" required /></td>
+  </tr>
+  <tr>
+    <th scope="row">Post</th>
+    <td><label for="textfield3"></label>
+      <input type="text" name="textfield3" id="textfield3" required/></td>
+  </tr>
+  <tr>
+    <th scope="row">Pin</th>
+    <td><label for="textfield4"></label>
+      <input type="text" name="textfield4" id="textfield4" required pattern="[0-9] {6}" /></td>
+  </tr>
+  <tr>
+    <th scope="row">Age</th>
+    <td><label for="textfield5"></label>
+      <input type="text" name="textfield5" id="textfield5" required /></td>
+  </tr>
+  <tr>
+    <th scope="row">Date Of Birth</th>
+    <td><label for="textfield6"></label>
+      <input type="date" name="textfield6" id="textfield6" required/></td>
+  </tr>
+  <tr>
+    <th scope="row">Gender</th>
+    <td><p>
+      <label for="radio"></label>
+      <input type="radio" name="radio" id="radio" value="male" />
+      Male</p>
+      <p>
+  <label for="radio2"></label>
+      <input type="radio" name="radio" id="radio2" value="female" />Female</p></td>
+  </tr>
+  <tr>
+    <th scope="row">District</th>
+    <td><label for="select"></label>
+      <select name="select" id="select">
+          <option>Kasargod</option>
+          <option>Kannur</option>
+          <option>Kozhikode</option>
+          <option>Wayanad</option>
+          <option>Malappuram</option>
+          <option>Thrissur</option>
+          <option>Palakkad</option>
+          <option>Ernakulam</option>
+          <option>Idukki</option>
+          <option>Kottayam</option>
+          <option>Alappuzha</option>
+          <option>Pathanamthitta</option>
+          <option>Kollam</option>
+          <option>Thiruvananthapuram</option>
+      </select></td>
+  </tr>
+  <tr>
+    <th scope="row">Phone_No</th>
+    <td><label for="textfield7"></label>
+      <input type="tel" name="textfield7" id="textfield7" required pattern="[6-9][0-9]{9}" /></td>
+  </tr>
+  <tr>
+    <th scope="row">Mail_Id</th>
+    <td><label for="textfield7"></label>
+      <input type="email" name="textfield8" id="textfield7" required/></td>
+  </tr>
+  <tr>
+    <th scope="row">Agent Licence No</th>
+    <td><label for="textfield8"></label>
+      <input type="text" name="textfield9" id="textfield8" required /></td>
+  </tr>
+  <tr>
+    <th scope="row">Licence Image</th>
+    <td><label for="fileField"></label>
+      <input type="file" name="fileField" id="fileField" required/></td>
+  </tr>
+  <tr>
+    <th scope="row">Government ID</th>
+    <td><label for="textfield9"></label>
+      <input type="text" name="textfield10" id="textfield9" required/></td>
+  </tr>
+  <tr>
+    <th scope="row">ID No</th>
+    <td><label for="textfield10"></label>
+      <input type="text" name="textfield11" id="textfield10" required/></td>
+  </tr>
+  <tr>
+    <th scope="row">ID Image</th>
+    <td><label for="fileField2"></label>
+      <input type="file" name="fileField2" id="fileField2" required /></td>
+  </tr>
+  <tr>
+    <th scope="row">password</th>
+    <td><label for="textfield12"></label>
+      <input type="password" name="textfield12" id="textfield12" required /></td>
+  </tr>
+    <tr>
+    <th scope="row">confirm password</th>
+    <td><label for="textfield13"></label>
+      <input type="password" name="password" id="textfield13" required/></td>
+  </tr>
+
+     <tr>
+    <th scope="row">Account No</th>
+    <td><label for="textfield10"></label>
+      <input type="text" name="ac" id="textfield10" required /></td>
+  </tr>
+  <tr>
+    <th scope="row">IFSC</th>
+    <td><label for="fileField2"></label>
+      <input type="file" name="ifsc" id="fileField2" required/></td>
+  </tr>
+  <tr>
+    <th colspan="2" scope="row"><input type="submit" name="button" id="button" value="Submit" /></th>
+    </tr>
+</table>
+</form>
+</body>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'customer/customerindex.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="200" border="1" class="table table-striped">
+    <tr>
+      <th scope="col" class="text-dark" style="color: black"><h3>#</h3></th>
+        <th scope="col" class="text-dark" style="color: black">Date</th>
+        <th scope="col" class="text-dark" style="color: black">Work details</th>
+      <th scope="col" class="text-dark" style="color: black">Count of labours</th>
+      <th scope="col" class="text-dark" style="color: black">Work days</th>
+      <th scope="col" class="text-dark" style="color: black">Payment per head</th>
+        <th></th>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <th scope="col">{{ loop.index }}</th>
+      <th scope="col">{{ i['Request_Date' ]}}&nbsp;</th>
+      <th scope="col">{{ i['Work_Details' ]}}</th>
+      <th scope="col">{{ i['Needed_labours' ]}}</th>
+      <th scope="col">{{ i['work_days' ]}}</th>
+      <th scope="col">{{ i['per_head'] }}</th>
+    <th>{% if i['Status']=='approved' %}<a href="/request_payment/{{ i['Request_Id'] }}">Payment</a> {% elif  i['Status']=='reject'  %}<font color="red">Reject</font> {% else %}<font color="yellow">Pending</font>{% endif %} </th>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

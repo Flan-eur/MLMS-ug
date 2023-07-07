@@ -1,0 +1,30 @@
+{% extends 'customer/customerindex.html' %}
+{% block body %}
+<body>
+<center>
+<form id="form1" name="form1" method="post" action="/request_payment_post/{{ data }}">
+  <table>
+
+        <tr>
+      <th scope="row">Account Number</th>
+      <td><label for="textfield8"></label>
+      <input type="text" name="textfield7" id="textfield8" required class="form-control" value="{{ ac }}"/></td>
+    </tr>
+      <tr>
+      <th scope="row">IFSC code</th>
+      <td><label for="textfield9"></label>
+      <input type="text" name="textfield8" id="textfield9" required class="form-control" value="{{ ifsc }}"/></td>
+    </tr>
+      <tr>
+      <th scope="row">Amount</th>
+      <td><label for="textfield10"></label>
+      <input type="text" name="textfield9" id="textfield10" value="{{ amount }}" readonly class="form-control"/></td>
+    </tr>
+      <tr>
+      <td colspan="2" scope="row" align="center"><input type="submit" name="button" id="button" value="Pay" class="btn btn-primary"/></td>
+    </tr>
+  </table>
+</form>
+</center>
+</body>
+{% endblock %}
